@@ -1,0 +1,286 @@
+/* Border box declaration */
+html {
+  box-sizing: border-box;
+}
+/* inherit border-box on all elements in the universe and before and after */
+*, 
+*:before, 
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+	font-family: Arial, Geneva, sans-serif;
+	background-image: url("../img/bground-md.jpg");
+	font-size: 100%;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: 'Cabin Condensed', sans-serif;
+}
+a {
+	color: #2772B0;
+}
+.wrapper {
+	width: 97%; /*could be 100%*/
+	max-width: 1200px;
+	margin: 0 auto;
+	float: none;
+	background-color: #fff;
+
+}
+header {
+  position: fixed;
+  background-color: #000;
+  margin-bottom: 0px;
+  border-bottom: 5px solid #D0DAE0;
+  clear: both;
+  width: 100%;
+  top: 0;
+  left: 0;
+  height: 50px;
+  display: block; 
+}
+header h1 {
+    font-family: 'Audiowide', cursive;
+    padding: 0.5em;
+    margin-top: 0px;
+    padding-top: 2px;
+    text-align: right; 
+}
+header h1 a {
+      color: #D0DAE0;
+      text-decoration: none; 
+}
+header h1 a:hover {
+        color: #b11101; 
+}
+
+////
+nav {
+  font-family: 'Audiowide', cursive;
+  font-size: 1.1em;
+  position: fixed;
+  background-color: #D0DAE0;
+  color: white;
+  width: 100%;
+  top: 50px;
+  left: 0;
+  border-bottom: 3px solid black;
+  /*clear: both; */
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  overflow: auto;
+  text-align: center; 
+ }
+ nav ul li {
+    text-align: center;
+    float: right; 
+}
+nav ul a {
+    color: #D0DAE0;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 1em;
+    float: left;
+    text-align: center; 
+}
+nav ul a:hover {
+      color: #b11101;
+      font-style: italic;
+      text-decoration: underline; 
+}
+
+/*main elements and classes*/
+.wrapper {
+  font-family: "PT Sans Narrow", sans-serif;
+  width: 95%;
+  /*could be 100%*/
+  max-width: 1200px;
+  margin: 0 auto;
+  float: none;
+  background-color: #fff;
+  margin-top: 80px;
+  overflow: hidden;
+  padding-bottom: 5px;
+  text-align: center;
+  /* sass nesting */ }
+.wrapper h4 {
+    margin-top: 0px;
+    font-size: .85em;
+    margin-bottom: 0px; 
+}
+.wrapper img {
+    margin-top: 4px;
+    margin-bottom: 1px; 
+}
+/*.wrapper.movie-posters img {
+  width: 80%;
+  height: 80%; 
+}*/
+footer {
+  font-family: 'Audiowide', cursive;
+  padding: .5em auto;
+  margin: .5em auto;
+  /* a darker shade of the primary color */
+  color: #fff;
+  text-align: center;
+  width:100%;
+  height: auto;
+  background-color: #7e0c01;
+  display: block;
+  clear: both; 
+}
+/*///////////////*/
+
+
+/*div img {
+	width:100%;
+	margin-bottom: 0px;
+	max-width: 225px;
+}
+div {
+	float: left;
+	width: 250px;
+	margin-left: 1.5em;
+}
+*/
+
+/* grid system */
+.row:after {
+  content: "";
+  clear: both;
+}
+
+[class *='col-']{
+	float:left;
+	margin-left:3.33333%; /*Sass will only look at five digits after decimal*/
+	min-height: 1px;
+}
+.col-1{
+	/*width: 21%;*/
+	/*height: 355px;*/
+	border-bottom: 2px solid black;
+	/*background-color: #ccf;*/
+}
+
+@media only screen and (max-width: 479px) {
+
+  header h1 a {
+      color: yellow;
+  }
+  [class*='col-'] {
+    float: left;  
+	margin: 0;
+    width: 50%; 
+	}
+	.wrapper{
+		width: 99%;
+		margin-top:50px;
+	}
+
+  .wrapper.movie-posters img {
+    /*height: 80%;*/
+    margin-top: 2px;
+    margin-bottom: 1px; 
+	} 
+
+}
+/* end 479 media query */
+
+@media only screen and (min-width: 480px) and (max-width: 703px)  { 
+	header h1 a {
+      color: green;
+  }
+  [class*='col-'] {  
+		float: left;  
+		margin: 0;
+    width: 33%; 
+	} 
+	.wrapper{
+		margin-top:55px;
+	}
+  .wrapper h4 {
+    margin-top: 1px;
+    font-size: .75em;
+    margin-bottom: 2px;
+  }
+	.movie-posters .col-1 {
+  	/* make the box shorter so it doesn't look empty */
+    /* movie posters have different dimension ratios from albums */
+    height: 80%; 
+    }
+} /* end 480x767 media query */
+
+
+@media only screen and (min-width: 704px) and (max-width: 746px){
+  header h1 a {
+      color: blue;
+  }
+  [class*='col-'] {
+    float: left;
+    margin: 0 auto;
+    min-height: 1px; }
+
+  .col-1 {
+    margin-bottom: 3px; 
+   }
+   .wrapper {
+    width: 98.5%;
+  }
+  
+  .wrapper img {
+    width:75%;
+    height:auto;
+    margin-top: 2px;
+    margin-bottom: 2px; }
+
+  .wrapper h4{
+    font-size: .90em; 
+  }
+
+
+}
+
+/* end 480x767 media query */
+
+/*@media only screen and (min-width: 702px) and (max-width: 866px) {}*/
+
+@media only screen and (min-width: 747px) and (max-width:779px){
+  header h1 a {
+      color: maroon;
+  }
+
+  .wrapper img {
+    width:auto;
+    height:auto;
+    margin-top: 2px;
+    margin-bottom: 2px; 
+  }
+	.col-1 {
+    	margin-left:1.33333%; /*Sass will only look at five digits after decimal*/ 
+	}
+}
+
+@media only screen and (min-width: 780px) and (max-width:1192px){
+  header h1 a {
+      color: #BF00FF;
+  }
+
+  .col-1 {
+      margin-left:1.33333%; /*Sass will only look at five digits after decimal*/ 
+  }
+}
+
+@media only screen and (max-width: 599px) {
+    body {
+      background-image: url("../img/bground-sm.jpg");
+    }
