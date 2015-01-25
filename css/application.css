@@ -397,19 +397,40 @@ header {
       color: #D0DAE0;
       text-decoration: none; }
       header h1 a:hover {
-        color: #B11101; }
+        color: #b1c2cc; }
 
 nav {
   font-family: "Audiowide", cursive, sans-serif;
-  font-size: 1.1em;
+  font-size: .8em;
   position: fixed;
-  background-color: #D0DAE0;
+  background-color: #9f2013;
   color: white;
   width: 100%;
   top: 50px;
   left: 0;
-  border-bottom: 3px solid black;
-  /*clear: both; */ }
+  border-bottom: 2px solid black;
+  clear: both;
+  padding-bottom: 2px; }
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  overflow: auto;
+  text-align: center; }
+  nav ul li {
+    text-align: center;
+    float: right; }
+  nav ul a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: .2em;
+    float: left;
+    text-align: center; }
+    nav ul a:hover {
+      color: #b3f8ff;
+      text-decoration: underline; }
 
 /*main elements and classes*/
 .wrapper {
@@ -420,7 +441,7 @@ nav {
   margin: 0 auto;
   float: none;
   background-color: #fff;
-  margin-top: 80px;
+  margin-top: 85px;
   overflow: hidden;
   padding-bottom: 5px;
   text-align: center;
@@ -442,7 +463,7 @@ footer {
   text-align: center;
   width: 100%;
   height: auto;
-  background-color: #7e0c01;
+  background-color: #7E0C01;
   display: block;
   clear: both; }
 
@@ -460,10 +481,20 @@ footer {
 
 /*  start of media queries */
 @media only screen and (max-width: 479px) {
+  header {
+    border-bottom: 2px solid #c8dce8;
+    height: 45px; }
+
   header h1 a {
-    color: #b18c8f; }
+    color: #b18c8f;
+    font-size: 85%; }
     header h1 a:hover {
       color: #595959; }
+
+  nav {
+    font-size: .65em;
+    padding-bottom: .1em;
+    top: 45px; }
 
   [class*='col-'] {
     float: left;
@@ -472,7 +503,7 @@ footer {
 
   .wrapper {
     width: 99%;
-    margin-top: 50px; }
+    margin-top: 60px; }
     .wrapper img {
       margin-top: 2px;
       margin-bottom: 1px; } }
@@ -490,7 +521,7 @@ footer {
     height: 80%; }
 
   .wrapper {
-    margin-top: 55px; }
+    margin-top: 75px; }
     .wrapper h4 {
       margin-top: 1px;
       font-size: .75em;
