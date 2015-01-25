@@ -53,33 +53,32 @@ nav{
   border-bottom: 2px solid black;
   clear: both;
   padding-bottom:2px;
-}
-
-nav ul {
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-  overflow: auto;
-  text-align: center;
-  li {
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    overflow: auto;
     text-align: center;
-    float:right;
-  }
-  a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-    padding: .2em;
-    float: left;
-    text-align: center;
-    &:hover {
-      color: invert($color-secondary-dark);
-      text-decoration:underline;
+    li {
+      text-align: center;
+      float:right;
+    }
+    a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      padding: .2em;
+      float: left;
+      text-align: center;
+      &:hover {
+        color: invert($color-secondary-dark);
+        text-decoration:underline;
+      }
     }
   }
 }
-/*main elements and classes*/
 
+/*main elements and classes*/
 
 .wrapper {
   font-family: $font-secondary;

@@ -411,26 +411,25 @@ nav {
   border-bottom: 2px solid black;
   clear: both;
   padding-bottom: 2px; }
-
-nav ul {
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-  overflow: auto;
-  text-align: center; }
-  nav ul li {
-    text-align: center;
-    float: right; }
-  nav ul a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-    padding: .2em;
-    float: left;
+  nav ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    overflow: auto;
     text-align: center; }
-    nav ul a:hover {
-      color: #b3f8ff;
-      text-decoration: underline; }
+    nav ul li {
+      text-align: center;
+      float: right; }
+    nav ul a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      padding: .2em;
+      float: left;
+      text-align: center; }
+      nav ul a:hover {
+        color: #b3f8ff;
+        text-decoration: underline; }
 
 /*main elements and classes*/
 .wrapper {
