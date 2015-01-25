@@ -14,7 +14,7 @@ body {
 	background-image: url("../img/bground-md.jpg");
 	font-size: 100%;
 }
-h1,
+/*h1,
 h2,
 h3,
 h4,
@@ -24,7 +24,7 @@ h6 {
 }
 a {
 	color: #2772B0;
-}
+}*/
 .wrapper {
 	width: 97%; /*could be 100%*/
 	max-width: 1200px;
