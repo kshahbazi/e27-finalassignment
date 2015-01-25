@@ -10,62 +10,42 @@ html {
 }
 
 body {
-	font-family: Arial, Geneva, sans-serif;
 	background-image: url("../img/bground-md.jpg");
 	font-size: 100%;
 }
-/*h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	font-family: 'Cabin Condensed', sans-serif;
-}
-a {
-	color: #2772B0;
-}*/
-.wrapper {
-	width: 97%; /*could be 100%*/
-	max-width: 1200px;
-	margin: 0 auto;
-	float: none;
-	background-color: #fff;
 
-}
 header {
   position: fixed;
   background-color: #000;
   margin-bottom: 0px;
-  border-bottom: 5px solid #D0DAE0;
+  border-bottom: 5px solid $color-primary;
   clear: both;
   width: 100%;
   top: 0;
   left: 0;
   height: 50px;
   display: block; 
-}
-header h1 {
-    font-family: 'Audiowide', cursive;
+  h1 {
+    font-family: $font-primary;
     padding: 0.5em;
     margin-top: 0px;
     padding-top: 2px;
     text-align: right; 
-}
-header h1 a {
-      color: #D0DAE0;
+    a {
+      color: $color-primary;
       text-decoration: none; 
-}
-header h1 a:hover {
-        color: #b11101; 
+      &:hover {
+              color: $color-secondary;
+      }
+    }
+  }
 }
 
-////
 nav {
-  font-family: 'Audiowide', cursive;
+  font-family: $font-primary;
   font-size: 1.1em;
   position: fixed;
-  background-color: #D0DAE0;
+  background-color: $color-primary;
   color: white;
   width: 100%;
   top: 50px;
@@ -74,35 +54,12 @@ nav {
   /*clear: both; */
 }
 
-nav ul {
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-  overflow: auto;
-  text-align: center; 
- }
- nav ul li {
-    text-align: center;
-    float: right; 
-}
-nav ul a {
-    color: #D0DAE0;
-    text-decoration: none;
-    font-weight: bold;
-    padding: 1em;
-    float: left;
-    text-align: center; 
-}
-nav ul a:hover {
-      color: #b11101;
-      font-style: italic;
-      text-decoration: underline; 
-}
-
 /*main elements and classes*/
+
+
 .wrapper {
-  font-family: "PT Sans Narrow", sans-serif;
-  width: 95%;
+  font-family: $font-secondary;
+  width: 96%;
   /*could be 100%*/
   max-width: 1200px;
   margin: 0 auto;
@@ -112,22 +69,20 @@ nav ul a:hover {
   overflow: hidden;
   padding-bottom: 5px;
   text-align: center;
-  /* sass nesting */ }
-.wrapper h4 {
+  /* sass nesting */
+  h4 {
     margin-top: 0px;
-    font-size: .85em;
+    font-size: $h4-primary;
     margin-bottom: 0px; 
-}
-.wrapper img {
+  }
+  img {
     margin-top: 4px;
     margin-bottom: 1px; 
+  } 
 }
-/*.wrapper.movie-posters img {
-  width: 80%;
-  height: 80%; 
-}*/
+
 footer {
-  font-family: 'Audiowide', cursive;
+  font-family: $font-primary;
   padding: .5em auto;
   margin: .5em auto;
   /* a darker shade of the primary color */
@@ -139,20 +94,6 @@ footer {
   display: block;
   clear: both; 
 }
-/*///////////////*/
-
-
-/*div img {
-	width:100%;
-	margin-bottom: 0px;
-	max-width: 225px;
-}
-div {
-	float: left;
-	width: 250px;
-	margin-left: 1.5em;
-}
-*/
 
 /* grid system */
 .row:after {
@@ -164,101 +105,100 @@ div {
 	float:left;
 	margin-left:3.33333%; /*Sass will only look at five digits after decimal*/
 	min-height: 1px;
-}
-.col-1{
-	/*width: 21%;*/
-	/*height: 355px;*/
 	border-bottom: 2px solid black;
-	/*background-color: #ccf;*/
 }
 
+/*  start of media queries */
 @media only screen and (max-width: 479px) {
 
   header h1 a {
-      color: yellow;
+      color: mix($color-primary-dark, $color-secondary, 70%);
+      &:hover {
+              color: grayscale($color-secondary);
+      }
   }
   [class*='col-'] {
     float: left;  
-	margin: 0;
+    margin: 0;
     width: 50%; 
 	}
 	.wrapper{
 		width: 99%;
 		margin-top:50px;
+    img {
+        margin-top: 2px;
+        margin-bottom: 1px; 
+      } 
 	}
-
-  .wrapper.movie-posters img {
-    /*height: 80%;*/
-    margin-top: 2px;
-    margin-bottom: 1px; 
-	} 
-
 }
 /* end 479 media query */
 
 @media only screen and (min-width: 480px) and (max-width: 703px)  { 
-	header h1 a {
-      color: green;
+	
+  header h1 a {
+      color: mix($color-primary, $color-secondary-dark, 30%);
+      &:hover {
+              color: invert($color-secondary);
+      }
   }
   [class*='col-'] {  
 		float: left;  
 		margin: 0;
-    width: 33%; 
+    width: 33%;
+    height: 80%;  
 	} 
 	.wrapper{
 		margin-top:55px;
+    h4 {
+        margin-top: 1px;
+        font-size: .75em;
+        margin-bottom: 2px;
+      }
 	}
-  .wrapper h4 {
-    margin-top: 1px;
-    font-size: .75em;
-    margin-bottom: 2px;
-  }
-	.movie-posters .col-1 {
-  	/* make the box shorter so it doesn't look empty */
-    /* movie posters have different dimension ratios from albums */
-    height: 80%; 
-    }
-} /* end 480x767 media query */
+  
+} 
+/* end 480x703 media query */
 
 
 @media only screen and (min-width: 704px) and (max-width: 746px){
+  
   header h1 a {
-      color: blue;
+      color: mix($color-primary-dark, $color-secondary, 40%);
+      &:hover {
+              color: invert($color-secondary-dark);
+      }
   }
   [class*='col-'] {
     float: left;
     margin: 0 auto;
-    min-height: 1px; }
-
+    min-height: 1px; 
+  }
   .col-1 {
     margin-bottom: 3px; 
-   }
-   .wrapper {
+  }
+  .wrapper {
     width: 98.5%;
-  }
-  
-  .wrapper img {
-    width:75%;
-    height:auto;
-    margin-top: 2px;
-    margin-bottom: 2px; }
-
-  .wrapper h4{
+    img {
+        width:75%;
+        height:auto;
+        margin-top: 2px;
+        margin-bottom: 2px; 
+    }
+    h4{
     font-size: .90em; 
+    }
   }
-
-
 }
-
-/* end 480x767 media query */
-
-/*@media only screen and (min-width: 702px) and (max-width: 866px) {}*/
+/* end 704x746 media query */
 
 @media only screen and (min-width: 747px) and (max-width:779px){
+  
   header h1 a {
-      color: maroon;
+      color: mix($color-primary, complement($color-secondary-dark), 5%);
+      &:hover {
+              color: mix($color-secondary, maroon, 25%);
+      }
   }
-
   .wrapper img {
     width:auto;
     height:auto;
@@ -269,18 +209,25 @@ div {
     	margin-left:1.33333%; /*Sass will only look at five digits after decimal*/ 
 	}
 }
+/* end 747x779 media query */
 
 @media only screen and (min-width: 780px) and (max-width:1192px){
+  
   header h1 a {
-      color: #BF00FF;
+      color: mix($color-primary, $color-secondary-dark, 60%);
+      &:hover {
+              color: mix($color-secondary, $color-primary, 25%);
+      }
   }
-
   .col-1 {
       margin-left:1.33333%; /*Sass will only look at five digits after decimal*/ 
   }
 }
+/* end 780x1192 media query */
 
 @media only screen and (max-width: 599px) {
     body {
+      /* set a smaller background image for smaller devices */
       background-image: url("../img/bground-sm.jpg");
     }
+}
